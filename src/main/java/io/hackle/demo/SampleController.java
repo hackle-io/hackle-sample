@@ -22,7 +22,8 @@ public class SampleController {
             .id(deviceId)
             .deviceId(deviceId)
             .build();
-        Decision decision = hackleClient.variationDetail(300, user); // A/B 테스트 분배
+        long experimentKey = 999; // 실험키
+        Decision decision = hackleClient.variationDetail(experimentKey, user); // A/B 테스트 분배
         model.addAttribute("variation", decision.getVariation());
         return "index.html";
     }
